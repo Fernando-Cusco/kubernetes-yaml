@@ -1,0 +1,5 @@
+- Obtener todos los contextos
+# kubectl config get-contexts
+
+- cambiar de contexto
+# kubectl config use-context nombre-contexto
