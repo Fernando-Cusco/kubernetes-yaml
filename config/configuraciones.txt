@@ -3,3 +3,22 @@
 
 - cambiar de contexto
 # kubectl config use-context nombre-contexto
+
+
+- Compilar la aplicación con maven usando una imagen de Docker
+
+sudo docker run -it --rm --name maven -v "$(pwd)":/usr/src/mymaven -w /usr/src/mymaven maven:3.3-jdk-8 mvn clean install
+
+- verificar la salida y el archivo war
+
+- construir imagen
+
+# docker build -t "wildfly-app" .
+
+- subir imagen a mi repo
+
+# docker login
+
+# docker tag wildfly-app fcusco96/wildfly-app:latest
+
+# docker push fcusco96/wildfly-app:latest

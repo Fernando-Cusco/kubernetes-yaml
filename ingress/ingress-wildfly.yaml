@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wildfly-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:                                                      #redirija el tráfico al servico de wildfly
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: wildfly-service
+          servicePort: 8080
+
+#habilitar Ingress Minikube
+# minikube addons enable ingress
