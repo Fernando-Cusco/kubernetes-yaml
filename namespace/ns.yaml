@@ -1,0 +1,5 @@
+#Crear un Namespace desde un manifiesto
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-yaml

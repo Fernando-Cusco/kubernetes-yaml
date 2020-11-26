@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: nginx-deploy
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
+#Ejecutar como un servicio para acceder al deploy
+# kubectl expose deployment nginx-deploy --type=LoadBalancer --port=80
+# Verificar el funcionamiento
+# minikube service nginx-deploy
+# https://computingforgeeks.com/how-to-install-minikube-on-ubuntu-debian-linux/
