@@ -26,7 +26,7 @@ public class Aplicacion extends HttpServlet {
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
         System.out.println("Salida GET con BD");
         final PrintWriter writer = response.getWriter();
-        writer.println("Salida GET con BD");
+        writer.println("Kubernetes-MariaDB");
         try{
             final Connection connection = this.connectDatabase();
             final Statement stmt = connection.createStatement();
